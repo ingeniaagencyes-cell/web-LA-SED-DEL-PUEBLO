@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Sed del Pueblo — Barro · Vid · Pasión</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pergamino:    #F2E8D5;
+  --pergamino-osc:#E0D0B0;
+  --tinta:        #1E1205;
+  --vino:         #5C1A1A;
+  --vino-claro:   #8B3A3A;
+  --verde-dehesa: #2C4A2E;
+  --verde-musgo:  #3D6142;
+  --verde-suave:  #C8D8C4;
+  --tierra:       #7A4A1E;
+  --ocre:         #B07030;
+  --crema-claro:  #FAF5EA;
+  --barro:        #9C5A2A;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--pergamino);
+  color: var(--tinta);
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ─── NAV ─── */
+header {
+  background: var(--verde-dehesa);
+  border-bottom: 3px solid var(--ocre);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-top {
+  text-align: center; padding: 0.3rem;
+  background: var(--vino);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--pergamino-osc);
+}
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 4rem; max-width: 1400px; margin: 0 auto;
+}
+.nav-logo {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.5rem; color: var(--pergamino); letter-spacing: 0.05em;
+}
+.nav-logo span { color: var(--ocre); }
+nav ul { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+nav a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--verde-suave); text-decoration: none; transition: color 0.25s;
+}
+nav a:hover { color: var(--ocre); }
+
+/* ─── HERO ─── */
+#hero {
+  position: relative;
+  background: var(--verde-dehesa);
+  min-height: 92vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/vinasfoto%20e%20inicio.webp') center/cover no-repeat;
+  opacity: 0.12;
+  mix-blend-mode: luminosity;
+  z-index: 0;
+}
+#hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--pergamino));
+  z-index: 2;
+}
+.hero-center {
+  position: relative; z-index: 1; max-width: 800px;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.hero-pretitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.55em; text-transform: uppercase;
+  color: var(--ocre); margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+}
+.hero-pretitle::before, .hero-pretitle::after {
+  content: ''; display: block; width: 30px; height: 1px;
+  background: var(--ocre); opacity: 0.6;
+}
+
+h1.hero-title {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  line-height: 1; color: var(--pergamino);
+  margin-bottom: 0.8rem;
+  text-shadow: 2px 4px 20px rgba(0,0,0,0.4);
+}
+h1.hero-title em { font-style: italic; color: var(--ocre); }
+
+.hero-subtitle {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem); font-style: italic;
+  color: var(--verde-suave); margin-bottom: 2rem; letter-spacing: 0.05em;
+}
+
+.hero-slogan {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--pergamino-osc); background: rgba(0,0,0,0.2);
+  padding: 0.6rem 1.5rem;
+  border: 1px solid rgba(176,112,48,0.4); margin-bottom: 2.5rem;
+}
+.hero-slogan .rombo { color: var(--ocre); font-size: 0.45rem; }
+
+.btn-hero {
+  display: inline-block; padding: 0.85rem 2.2rem;
+  background: var(--ocre); color: var(--crema-claro);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  text-decoration: none; border: 2px solid var(--ocre);
+  transition: background 0.3s, color 0.3s;
+}
+.btn-hero:hover { background: transparent; color: var(--ocre); }
+
+/* ─── ORNAMENTAL ─── */
+.ornament { text-align: center; color: var(--ocre); font-size: 1.2rem; opacity: 0.7; }
+.linea-ornamental {
+  display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0;
+}
+.linea-ornamental::before, .linea-ornamental::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, var(--ocre), transparent); opacity: 0.5;
+}
+
+/* ─── SECCIONES ─── */
+section { position: relative; z-index: 1; padding: 6rem 4rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.6em; text-transform: uppercase;
+  color: var(--vino-claro); margin-bottom: 0.8rem;
+}
+
+h2.section-title {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1;
+  color: var(--vino); margin-bottom: 1.5rem;
+}
+h2.section-title em { font-style: italic; color: var(--verde-dehesa); }
+
+.body-p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.1rem; line-height: 1.85; color: #3A2A18; max-width: 600px;
+}
+
+/* ─── SVG ICONS ─── */
+.svg-icon {
+  width: 38px; height: 38px; margin-bottom: 1rem;
+  display: block;
+}
+.svg-icon-sm { width: 28px; height: 28px; margin-bottom: 0.8rem; display: block; }
+.svg-icon-lg { width: 56px; height: 56px; margin-bottom: 1.2rem; display: block; }
+
+/* ─── BANDA ─── */
+.banda {
+  background: var(--vino); padding: 1.2rem 0; overflow: hidden;
+  border-top: 1px solid rgba(176,112,48,0.3);
+  border-bottom: 1px solid rgba(176,112,48,0.3);
+}
+.banda-inner {
+  display: flex; gap: 4rem;
+  animation: desplazar 30s linear infinite; white-space: nowrap;
+}
+.banda-item {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.5em; text-transform: uppercase;
+  color: rgba(242,232,213,0.6); display: flex; align-items: center; gap: 2rem;
+}
+.banda-item::after { content: '✦'; font-size: 0.6rem; opacity: 0.4; }
+@keyframes desplazar { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ─── HISTORIA ─── */
+#historia { background: var(--crema-claro); }
+#historia .grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+.timeline { border-left: 2px solid var(--ocre); padding-left: 2rem; margin-top: 1rem; }
+.tl-item { position: relative; margin-bottom: 2rem; }
+.tl-item::before {
+  content: ''; position: absolute; left: -2.6rem; top: 0.5rem;
+  width: 10px; height: 10px; background: var(--vino);
+  border-radius: 50%; border: 2px solid var(--ocre);
+}
+.tl-year {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--ocre); margin-bottom: 0.3rem;
+}
+.tl-text { font-family: 'Crimson Text', serif; font-size: 1rem; line-height: 1.7; color: #4A3020; }
+
+.historia-foto {
+  background: var(--verde-dehesa); padding: 3rem; text-align: center; position: relative;
+}
+.historia-foto::before {
+  content: ''; position: absolute; inset: 8px;
+  border: 1px solid rgba(176,112,48,0.4); pointer-events: none;
+}
+.historia-foto p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem; font-style: italic;
+  color: var(--verde-suave); line-height: 1.7;
+}
+
+/* ─── LEYENDA ─── */
+#leyenda { background: var(--vino); color: var(--pergamino); }
+#leyenda .section-label { color: var(--ocre); }
+#leyenda h2.section-title { color: var(--pergamino); }
+#leyenda h2.section-title em { color: var(--ocre); }
+.leyenda-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.leyenda-texto {
+  font-size: 1.1rem; line-height: 1.9;
+  color: rgba(242,232,213,0.85); margin-bottom: 3rem;
+}
+.cita-grande {
+  font-family: 'IM Fell English', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-style: italic;
+  line-height: 1.65; color: var(--pergamino);
+  padding: 3rem 4rem;
+  border-top: 1px solid rgba(176,112,48,0.4);
+  border-bottom: 1px solid rgba(176,112,48,0.4);
+  margin: 2rem 0;
+}
+.cita-grande em { color: var(--ocre); font-style: normal; }
+.cita-grande .comillas { font-size: 4.5rem; color: rgba(176,112,48,0.25); line-height: 0; vertical-align: -1.4rem; }
+.cita-autor {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--ocre); margin-top: 1.5rem;
+}
+
+/* ─── VALORES ─── */
+#valores { background: var(--pergamino); }
+.valores-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; border: 1px solid rgba(156,90,42,0.25); margin-top: 3rem;
+}
+.vcard {
+  padding: 2.2rem 1.8rem;
+  border-right: 1px solid rgba(156,90,42,0.2);
+  border-bottom: 1px solid rgba(156,90,42,0.2);
+  transition: background 0.3s;
+}
+.vcard:hover { background: rgba(92,26,26,0.04); }
+.vcard:nth-child(4n) { border-right: none; }
+.vcard:nth-last-child(-n+4) { border-bottom: none; }
+.vcard-name {
+  font-family: 'IM Fell English', serif; font-size: 1.05rem; color: var(--vino); margin-bottom: 0.6rem;
+}
+.vcard-desc { font-size: 0.92rem; line-height: 1.75; color: #5A4030; }
+
+/* ─── PRODUCTO ─── */
+#producto {
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(156,90,42,0.025) 2px, rgba(156,90,42,0.025) 4px),
+    var(--crema-claro);
+}
+#producto .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.producto-marco {
+  background: var(--verde-dehesa); padding: 3.5rem; text-align: center; position: relative;
+  box-shadow: 6px 6px 0 var(--ocre);
+}
+.producto-marco::before {
+  content: ''; position: absolute; inset: 10px;
+  border: 1px solid rgba(176,112,48,0.35); pointer-events: none;
+}
+.producto-marco .prod-nombre {
+  font-family: 'IM Fell English', serif; font-size: 1.6rem; color: var(--pergamino); margin-bottom: 0.5rem;
+}
+.producto-marco .prod-subtipo {
+  font-family: 'Raleway', sans-serif; font-size: 0.65rem; letter-spacing: 0.4em;
+  text-transform: uppercase; color: var(--ocre);
+}
+.feat-list { margin-top: 1.5rem; }
+.feat-item { display: flex; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid rgba(156,90,42,0.15); }
+.feat-item:last-child { border-bottom: none; }
+.feat-num { font-family: 'IM Fell English', serif; font-size: 2rem; color: rgba(92,26,26,0.18); line-height: 1; min-width: 2.5rem; }
+.feat-item h4 { font-family: 'IM Fell English', serif; font-size: 1.1rem; color: var(--vino); margin-bottom: 0.4rem; }
+.feat-item p { font-size: 0.95rem; line-height: 1.75; color: #4A3020; }
+
+/* ─── LOBOS ─── */
+#lobos { background: var(--tinta); color: var(--pergamino); }
+#lobos .section-label { color: var(--ocre); text-align: center; }
+#lobos h2.section-title { color: var(--pergamino); text-align: center; }
+#lobos h2.section-title em { color: var(--ocre); font-style: italic; }
+.lobo-unico {
+  max-width: 750px; margin: 3.5rem auto 0;
+}
+.lobo-card { position: relative; overflow: hidden; border: 2px solid rgba(176,112,48,0.35); box-shadow: 5px 5px 0 rgba(176,112,48,0.2); }
+.lobo-card img {
+  width: 100%; height: 440px; object-fit: cover; display: block;
+  transition: transform 0.6s ease;
+  filter: sepia(15%) contrast(1.08) brightness(0.9);
+}
+.lobo-card:hover img { transform: scale(1.04); }
+.lobo-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 3rem 1.5rem 1.2rem;
+  background: linear-gradient(to top, rgba(30,18,5,0.88), transparent);
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.95rem; font-style: italic; color: var(--pergamino-osc); letter-spacing: 0.04em;
+}
+
+/* ─── SOSTENIBILIDAD ─── */
+#sostenibilidad { background: var(--verde-dehesa); color: var(--pergamino); }
+#sostenibilidad .section-label { color: rgba(200,216,196,0.7); }
+#sostenibilidad h2.section-title { color: var(--pergamino); }
+#sostenibilidad h2.section-title em { color: var(--ocre); }
+#sostenibilidad .body-p { color: rgba(242,232,213,0.8); }
+#sostenibilidad .grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; }
+
+.sost-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(200,216,196,0.08); border: 1px solid rgba(176,112,48,0.3);
+  margin-top: 1rem;
+}
+.sost-cell {
+  position: relative; overflow: hidden;
+  min-height: 200px;
+  cursor: default;
+}
+/* Imagen de fondo en hover */
+.sost-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 0.5s ease; z-index: 0;
+}
+/* Overlay verde encima de imagen */
+.sost-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(30, 55, 32, 0.72);
+}
+.sost-cell:hover .sost-bg { opacity: 1; }
+.sost-content {
+  position: relative; z-index: 1;
+  padding: 1.8rem; height: 100%;
+  transition: background 0.3s;
+  background: var(--verde-dehesa);
+}
+.sost-cell:hover .sost-content { background: transparent; }
+.sost-content h4 {
+  font-family: 'IM Fell English', serif; font-size: 1rem; color: var(--ocre); margin-bottom: 0.4rem;
+}
+.sost-content p { font-size: 0.88rem; line-height: 1.7; color: rgba(200,216,196,0.75); }
+
+/* ─── FILOSOFÍA ─── */
+#filosofia { background: var(--pergamino-osc); }
+.filo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 3.5rem; }
+.filo-card {
+  background: var(--crema-claro); padding: 2.5rem 2rem;
+  border-top: 3px solid var(--vino);
+  box-shadow: 3px 3px 0 rgba(92,26,26,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.filo-card:hover { transform: translateY(-4px); box-shadow: 5px 7px 0 rgba(92,26,26,0.15); }
+.filo-card h3 { font-family: 'IM Fell English', serif; font-size: 1.2rem; color: var(--vino); margin-bottom: 0.8rem; }
+.filo-card p { font-size: 0.95rem; line-height: 1.8; color: #4A3020; }
+
+/* ─── CONTACTO ─── */
+#contacto { background: var(--crema-claro); text-align: center; }
+.contacto-inner { max-width: 700px; margin: 0 auto; }
+.contact-datos { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin: 2.5rem 0; }
+.dato h5 {
+  font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.4em; text-transform: uppercase; color: var(--vino-claro); margin-bottom: 0.4rem;
+}
+.dato p { font-size: 1rem; color: #3A2A18; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--verde-dehesa); padding: 2.5rem 4rem;
+  border-top: 3px solid var(--ocre);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-brand { font-family: 'IM Fell English', serif; font-size: 1.2rem; color: var(--pergamino); }
+.footer-brand span { color: var(--ocre); }
+.footer-slogan { font-family: 'Raleway', sans-serif; font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--ocre); opacity: 0.7; }
+.footer-copy { font-size: 0.75rem; color: rgba(200,216,196,0.5); letter-spacing: 0.05em; }
+
+/* ─── REVEAL ─── */
+.aparece { opacity: 0; transform: translateY(25px); transition: opacity .8s ease, transform .8s ease; }
+.aparece.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  nav ul { display: none; } nav { padding: 1rem 2rem; }
+  #historia .grid, #producto .grid, #sostenibilidad .grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .valores-grid { grid-template-columns: repeat(2,1fr); }
+  .filo-grid { grid-template-columns: 1fr; }
+  section { padding: 4rem 2rem; }
+  .cita-grande { padding: 2rem 1.5rem; }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (max-width: 600px) {
+  .valores-grid { grid-template-columns: 1fr; }
+  .sost-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- CABECERA -->
+<header>
+  <div class="nav-top">Extremadura · Vino Tinto Artesano · Bodega Histórica desde 1936</div>
+  <nav>
+    <div class="nav-logo">La Sed <span>del</span> Pueblo</div>
+    <ul>
+      <li><a href="#historia">Historia</a></li>
+      <li><a href="#leyenda">Leyenda</a></li>
+      <li><a href="#valores">Valores</a></li>
+      <li><a href="#producto">Producto</a></li>
+      <li><a href="#lobos">Lobos</a></li>
+      <li><a href="#sostenibilidad">Sostenibilidad</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-center">
+    <p class="hero-pretitle">Extremadura · Est. 2024</p>
+    <h1 class="hero-title">La Sed<br>del <em>Pueblo</em></h1>
+    <p class="hero-subtitle">Vino Tinto Artesano de la Dehesa Extremeña</p>
+    <div class="hero-slogan">
+      Barro <span class="rombo">◆</span> Vid <span class="rombo">◆</span> Pasión
+    </div>
+    <a href="#historia" class="btn-hero">Conocer Nuestra Historia</a>
+  </div>
+</section>
+
+<!-- BANDA -->
+<div class="banda">
+  <div class="banda-inner">
+    <span class="banda-item">Tradición</span><span class="banda-item">Barro · Vid · Pasión</span><span class="banda-item">Vino Artesano</span><span class="banda-item">Extremadura</span><span class="banda-item">Sostenibilidad</span><span class="banda-item">Identidad Local</span><span class="banda-item">Cercanía</span>
+    <span class="banda-item">Tradición</span><span class="banda-item">Barro · Vid · Pasión</span><span class="banda-item">Vino Artesano</span><span class="banda-item">Extremadura</span><span class="banda-item">Sostenibilidad</span><span class="banda-item">Identidad Local</span><span class="banda-item">Cercanía</span>
+  </div>
+</div>
+
+<!-- HISTORIA -->
+<section id="historia">
+  <div class="section-inner">
+    <div class="grid">
+      <div>
+        <p class="section-label aparece">Nuestras Raíces</p>
+        <h2 class="section-title aparece d1">Una Historia<br>de <em>Ocho Mil Años</em></h2>
+        <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
+        <p class="body-p aparece d2">Somos hijas de esta tierra extremeña. Cuando nos fuimos a la ciudad, nos llevamos la nostalgia de las tradiciones, el olor de la dehesa y el sabor del vino de pueblo. Con La Sed del Pueblo recuperamos no solo un vino, sino una forma de vivir.</p>
+        <br>
+        <p class="body-p aparece d3" style="font-style:italic; color:var(--vino-claro)">Nuestra bodega es una construcción histórica de 1936, parcialmente destruida durante la Guerra Civil española y restaurada con respeto por sus materiales y estructura originales.</p>
+        <div class="timeline aparece d2" style="margin-top:2.5rem">
+          <div class="tl-item"><p class="tl-year">+8.000 a.C. — Cáucaso</p><p class="tl-text">Primeras evidencias de vinificación en vasijas de barro de la región caucásica.</p></div>
+          <div class="tl-item"><p class="tl-year">Antigüedad — Egipto & Grecia</p><p class="tl-text">El vino se convierte en símbolo de cultura y estatus. Roma lo extiende por toda Europa.</p></div>
+          <div class="tl-item"><p class="tl-year">Edad Media — La Rioja</p><p class="tl-text">La tradición vitivinícola se asienta en la península ibérica forjando identidades locales.</p></div>
+          <div class="tl-item"><p class="tl-year">Siglo XIX — La Filoxera</p><p class="tl-text">Una plaga arrasó los viñedos europeos. La resiliencia del sector los reconstruyó.</p></div>
+          <div class="tl-item"><p class="tl-year">Hoy — La Sed del Pueblo</p><p class="tl-text">El vino de pueblo ha vuelto. Barro, tierra, comunidad y pasión sin artificio.</p></div>
+        </div>
+      </div>
+      <div class="aparece d3">
+        <div class="historia-foto">
+          <span style="font-size:7rem;line-height:1;display:block;margin:0 auto 1.5rem">🏺</span>
+          <p>"Desde que nos vinimos a la ciudad dejando atrás nuestro pueblo, hemos echado en falta la cercanía y las tradiciones típicas, como hijas de esta tierra y herederas de ella."</p>
+          <br>
+          <p style="font-size:0.75rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ocre);font-family:'Raleway',sans-serif;font-style:normal">— Las Fundadoras</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEYENDA -->
+<section id="leyenda">
+  <div class="section-inner">
+    <div class="leyenda-inner">
+      <p class="section-label aparece">La Leyenda</p>
+      <h2 class="section-title aparece d1">Dionisio y la<br><em>Dehesa Extremeña</em></h2>
+      <div class="linea-ornamental aparece d1"><span class="ornament" style="color:var(--ocre)">❦</span></div>
+      <p class="leyenda-texto aparece d2">Cansado de la monotonía del Olimpo, Dionisio emprendió un viaje buscando algo que su alma sedienta de cambio no encontraba entre los dioses. Llegó a un pequeño pueblo de lo que hoy conocemos como Extremadura, en pleno verano, con la tierra seca y el calor aplomado. Desde la sombra de un pequeño olivo, observó a un grupo de campesinos recolectando uvas de una parra. Al caer la tarde, los vio sentarse juntos y pasarse un botijo de barro de unos a otros.</p>
+      <blockquote class="cita-grande aparece d3">
+        <span class="comillas">"</span>El vino sabe mejor si viene de recompensa ante el esfuerzo. <em>La sed nos unirá</em>, el vino se adentrará en nuestro alma y el barro guardará el recuerdo.<span class="comillas">"</span>
+      </blockquote>
+      <p class="cita-autor aparece d3">— Dionisio, dios del vino</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section id="valores">
+  <div class="section-inner">
+    <p class="section-label aparece" style="text-align:center">Lo Que Nos Mueve</p>
+    <h2 class="section-title aparece d1" style="text-align:center">Nuestros <em>Valores</em></h2>
+    <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
+    <div class="valores-grid aparece d2">
+
+      <!-- Tradición -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="10" r="5" stroke="#5C1A1A" stroke-width="1.5"/><path d="M8 34 C8 22 32 22 32 34" stroke="#5C1A1A" stroke-width="1.5" fill="none"/><path d="M14 30 L14 20 M26 30 L26 20" stroke="#B07030" stroke-width="1.2"/><rect x="10" y="30" width="20" height="4" rx="1" fill="#5C1A1A" opacity="0.2"/></svg>
+        <p class="vcard-name">Tradición</p>
+        <p class="vcard-desc">Elaboramos nuestro vino siguiendo la receta ancestral hallada en la choza de nuestros abuelos. Cada paso respeta los procesos de siempre.</p>
+      </div>
+
+      <!-- Cercanía -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><path d="M20 6 C13 6 8 11 8 17 C8 25 20 34 20 34 C20 34 32 25 32 17 C32 11 27 6 20 6Z" stroke="#5C1A1A" stroke-width="1.5" fill="none"/><circle cx="20" cy="17" r="4" fill="#B07030" opacity="0.6"/></svg>
+        <p class="vcard-name">Cercanía</p>
+        <p class="vcard-desc">Escucha activa de clientes y trabajadores. Convivencias mensuales en casa rural con relajación y comida en común para fomentar la cohesión del equipo.</p>
+      </div>
+
+      <!-- Sostenibilidad -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><path d="M20 34 L20 18" stroke="#2C4A2E" stroke-width="1.5" stroke-linecap="round"/><path d="M20 18 C20 18 12 20 10 12 C14 10 22 14 20 18Z" fill="#2C4A2E" opacity="0.6"/><path d="M20 24 C20 24 28 22 30 14 C26 12 18 16 20 24Z" fill="#3D6142" opacity="0.5"/></svg>
+        <p class="vcard-name">Sostenibilidad</p>
+        <p class="vcard-desc">Riego por goteo, aguas pluviales, energía solar, pastoreo controlado y botijo reutilizable. La naturaleza es nuestra primera responsabilidad.</p>
+      </div>
+
+      <!-- Pasión -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><path d="M20 32 C20 32 8 24 8 15 C8 10 12 7 16 8 C18 8.5 20 11 20 11 C20 11 22 8.5 24 8 C28 7 32 10 32 15 C32 24 20 32 20 32Z" stroke="#5C1A1A" stroke-width="1.5" fill="#8B3A3A" fill-opacity="0.25"/></svg>
+        <p class="vcard-name">Pasión</p>
+        <p class="vcard-desc">Siempre abiertos a sugerencias. En cada convivencia mensual transmitimos el entusiasmo por el producto y nuestra tierra extremeña.</p>
+      </div>
+
+      <!-- Identidad Local -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><rect x="8" y="20" width="24" height="14" rx="1" stroke="#5C1A1A" stroke-width="1.5"/><path d="M4 22 L20 8 L36 22" stroke="#5C1A1A" stroke-width="1.5" stroke-linecap="round"/><rect x="16" y="26" width="8" height="8" rx="1" fill="#B07030" opacity="0.4"/></svg>
+        <p class="vcard-name">Identidad Local</p>
+        <p class="vcard-desc">Bodega histórica de 1936 en plena dehesa extremeña, con materiales y estructura originales. El territorio es nuestra identidad más profunda.</p>
+      </div>
+
+      <!-- Respeto -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><path d="M20 8 L24 16 L33 17 L26.5 23 L28 32 L20 28 L12 32 L13.5 23 L7 17 L16 16 Z" stroke="#5C1A1A" stroke-width="1.4" fill="#B07030" fill-opacity="0.18"/></svg>
+        <p class="vcard-name">Respeto</p>
+        <p class="vcard-desc">Reuniones semanales, cero conductas discriminatorias y dinámicas semanales de reconocimiento entre compañeros. Cada voz importa y se celebra.</p>
+      </div>
+
+      <!-- Compromiso -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><path d="M12 20 L18 26 L28 14" stroke="#2C4A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="20" r="13" stroke="#5C1A1A" stroke-width="1.4"/></svg>
+        <p class="vcard-name">Compromiso</p>
+        <p class="vcard-desc">Apoyo mutuo, puntualidad en plazos y el "Empleado del Mes" para quien más aporta. El éxito colectivo nace del compromiso individual.</p>
+      </div>
+
+      <!-- Bienestar -->
+      <div class="vcard">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><path d="M20 10 C20 10 10 14 10 22 C10 28 14 32 20 32 C26 32 30 28 30 22 C30 14 20 10 20 10Z" stroke="#5C1A1A" stroke-width="1.5" fill="none"/><path d="M15 22 C15 22 17 26 20 26 C23 26 25 22 25 22" stroke="#B07030" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+        <p class="vcard-name">Bienestar y Seguridad</p>
+        <p class="vcard-desc">Equipo de prevención de riesgos, vestimenta cómoda y segura, instalaciones cuidadas y técnicas de relajación en las convivencias mensuales.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTO -->
+<section id="producto">
+  <div class="section-inner">
+    <div class="grid">
+      <div class="aparece">
+        <div class="producto-marco" style="padding: 1.5rem; padding-bottom: 2rem;">
+          <img src="https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/Captura-de-pantalla-2026-02-27-103017.webp" alt="Botijo artesano de barro" style="width:100%; height:420px; object-fit:cover; margin:0 auto 2rem; display:block; filter: sepia(10%) contrast(1.05);">
+          <p class="prod-nombre" style="margin-bottom:0;">La Sed del Pueblo</p>
+        </div>
+      </div>
+      <div>
+        <p class="section-label aparece">El Producto</p>
+        <h2 class="section-title aparece d1">El Botijo de<br><em>Barro Artesano</em></h2>
+        <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
+        <div class="feat-list">
+          <div class="feat-item aparece d1"><div class="feat-num">I</div><div><h4>Barro Artesano</h4><p>Cada botijo es único, elaborado a mano con barro de la tierra extremeña. No es un envase: es patrimonio cultural vivo y material de memoria colectiva.</p></div></div>
+          <div class="feat-item aparece d2"><div class="feat-num">II</div><div><h4>Reutilizable y Circular</h4><p>El botijo puede recargarse en nuestra bodega o en cualquier franquicia. Compramos menos, reutilizamos más, respetamos la tierra.</p></div></div>
+          <div class="feat-item aparece d3"><div class="feat-num">III</div><div><h4>Elaboración Tradicional</h4><p>Parras autóctonas, injertos tradicionales y sin producción intensiva. Aditivos mínimos para respetar la naturalidad del vino y la tierra.</p></div></div>
+          <div class="feat-item aparece d3"><div class="feat-num">IV</div><div><h4>Bodega Histórica de 1936</h4><p>Producimos en una bodega con historia, restaurada con mimo para preservar su estructura y los materiales de construcción originales.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOBOS -->
+<section id="lobos">
+  <div class="section-inner">
+    <p class="section-label aparece" style="text-align:center">Símbolo de Extremadura</p>
+    <h2 class="section-title aparece d1" style="text-align:center">El <em style="color:var(--ocre)">Lobo Extremeño</em></h2>
+    <div class="linea-ornamental aparece d1"><span class="ornament" style="color:var(--ocre)">❦</span></div>
+    <p class="body-p aparece d2" style="color:rgba(242,232,213,0.8); max-width:680px; margin:0 auto; text-align:center">
+      El lobo es símbolo de la tierra extremeña: libre, salvaje y profundamente enraizado en su paisaje. Como él, La Sed del Pueblo pertenece a esta dehesa, la respeta y la defiende.
+    </p>
+    <div class="lobo-unico aparece d3">
+      <div class="lobo-card">
+        <img src="https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/Captura-de-pantalla-2026-02-27-105738.webp" alt="Lobo extremeño, símbolo de la dehesa">
+        <div class="lobo-caption">Guardián de la dehesa extremeña</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOSTENIBILIDAD -->
+<section id="sostenibilidad">
+  <div class="section-inner">
+    <div class="grid">
+      <div>
+        <p class="section-label aparece">Planeta Primero</p>
+        <h2 class="section-title aparece d1">Comprometidas<br>con la <em>Tierra</em></h2>
+        <div class="linea-ornamental aparece d1"><span class="ornament" style="color:var(--ocre)">❦</span></div>
+        <p class="body-p aparece d2">Desde el viñedo hasta el botijo, cada decisión pasa por el filtro de la sostenibilidad. No como moda, sino como deber con la misma tierra que nos alimenta y nos da identidad como extremeñas.</p>
+        <p class="body-p aparece d3" style="margin-top:1rem; font-style:italic; color:rgba(200,216,196,0.6)">Pasa el cursor sobre cada práctica para ver cómo la llevamos a cabo.</p>
+      </div>
+      <div class="sost-grid aparece d2">
+
+        <!-- Riego por goteo -->
+        <div class="sost-cell">
+          <div class="sost-bg" style="background-image:url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&q=80')"></div>
+          <div class="sost-content">
+            <svg class="svg-icon-sm" viewBox="0 0 32 32" fill="none"><path d="M16 4 C16 4 8 14 8 20 C8 25 11.6 28 16 28 C20.4 28 24 25 24 20 C24 14 16 4 16 4Z" stroke="#C8D8C4" stroke-width="1.5" fill="none"/><path d="M11 22 C12 25 15 26 17 25" stroke="#B07030" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+            <h4>Riego por Goteo</h4>
+            <p>Sistema eficiente con recogida de aguas pluviales para reutilización en el riego.</p>
+          </div>
+        </div>
+
+        <!-- Parras autóctonas -->
+        <div class="sost-cell">
+          <div class="sost-bg" style="background-image:url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=700&q=80')"></div>
+          <div class="sost-content">
+            <svg class="svg-icon-sm" viewBox="0 0 32 32" fill="none"><path d="M16 28 L16 14" stroke="#C8D8C4" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14 C16 14 8 16 7 10 C10 8 18 12 16 14Z" fill="#C8D8C4" opacity="0.5"/><path d="M16 20 C16 20 24 18 25 12 C22 10 14 14 16 20Z" fill="#B07030" opacity="0.45"/><circle cx="10" cy="22" r="2" fill="#B07030" opacity="0.5"/><circle cx="22" cy="24" r="2" fill="#B07030" opacity="0.5"/></svg>
+            <h4>Parras Autóctonas</h4>
+            <p>Injertos tradicionales, sin producción intensiva, respetando la biodiversidad local.</p>
+          </div>
+        </div>
+
+        <!-- Pastoreo controlado -->
+        <div class="sost-cell">
+          <div class="sost-bg" style="background-image:url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=700&q=80')"></div>
+          <div class="sost-content">
+            <svg class="svg-icon-sm" viewBox="0 0 32 32" fill="none"><ellipse cx="14" cy="14" rx="8" ry="6" stroke="#C8D8C4" stroke-width="1.4"/><path d="M8 16 L6 22 M12 17 L11 22 M16 17 L17 22 M20 16 L22 22" stroke="#C8D8C4" stroke-width="1.3" stroke-linecap="round"/><circle cx="22" cy="11" r="3" fill="#B07030" opacity="0.4"/><path d="M22 8 C22 8 24 5 26 6" stroke="#C8D8C4" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <h4>Pastoreo Controlado</h4>
+            <p>La limpia de viñas se realiza con pastoreo. Cero uso de productos químicos.</p>
+          </div>
+        </div>
+
+        <!-- Energía solar -->
+        <div class="sost-cell">
+          <div class="sost-bg" style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80')"></div>
+          <div class="sost-content">
+            <svg class="svg-icon-sm" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="6" stroke="#B07030" stroke-width="1.5"/><path d="M16 4 L16 7 M16 25 L16 28 M4 16 L7 16 M25 16 L28 16 M7.8 7.8 L9.9 9.9 M22.1 22.1 L24.2 24.2 M24.2 7.8 L22.1 9.9 M9.9 22.1 L7.8 24.2" stroke="#C8D8C4" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <h4>Energía Solar</h4>
+            <p>Placas solares en la bodega para una producción con huella de carbono mínima.</p>
+          </div>
+        </div>
+
+        <!-- Envase recargable -->
+        <div class="sost-cell">
+          <div class="sost-bg" style="background-image:url('https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?w=700&q=80')"></div>
+          <div class="sost-content">
+            <svg class="svg-icon-sm" viewBox="0 0 32 32" fill="none"><path d="M12 8 C12 8 9 11 9 16 C9 22 12 25 16 25 C20 25 23 22 23 16 C23 11 20 8 20 8" stroke="#C8D8C4" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M13 6 L16 3 L19 6" stroke="#B07030" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12 C14 10 18 10 20 12" stroke="#C8D8C4" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/></svg>
+            <h4>Envase Recargable</h4>
+            <p>El botijo de barro elimina el residuo. Recárgalo en bodega o en nuestras franquicias.</p>
+          </div>
+        </div>
+
+        <!-- Patrimonio preservado -->
+        <div class="sost-cell">
+          <div class="sost-bg" style="background-image:url('https://images.unsplash.com/photo-1548222935-4b492fdedbb9?w=700&q=80')"></div>
+          <div class="sost-content">
+            <svg class="svg-icon-sm" viewBox="0 0 32 32" fill="none"><rect x="6" y="16" width="20" height="12" rx="1" stroke="#C8D8C4" stroke-width="1.4"/><path d="M3 18 L16 7 L29 18" stroke="#C8D8C4" stroke-width="1.4" stroke-linecap="round"/><rect x="12" y="20" width="8" height="8" rx="1" fill="#B07030" opacity="0.35"/><path d="M9 16 L9 28 M23 16 L23 28" stroke="#C8D8C4" stroke-width="1" opacity="0.5"/></svg>
+            <h4>Patrimonio Preservado</h4>
+            <p>Recuperamos una bodega histórica en lugar de construir desde cero: menos impacto, más alma.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILOSOFÍA -->
+<section id="filosofia" style="background:var(--pergamino-osc)">
+  <div class="section-inner">
+    <p class="section-label aparece" style="text-align:center">Cómo Trabajamos</p>
+    <h2 class="section-title aparece d1" style="text-align:center">Nuestra <em>Filosofía</em></h2>
+    <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
+    <p class="body-p aparece d2" style="max-width:650px; margin:0 auto; text-align:center">En La Sed del Pueblo no separamos el trabajo de la vida. Quien produce algo que ama, lo hace mejor. Y quien se siente parte de algo real, permanece.</p>
+    <div class="filo-grid">
+      <div class="filo-card aparece">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="14" width="28" height="20" rx="2" stroke="#5C1A1A" stroke-width="1.5"/><path d="M12 14 L12 10 C12 10 16 6 20 6 C24 6 28 10 28 10 L28 14" stroke="#5C1A1A" stroke-width="1.5" fill="none"/><path d="M14 26 L26 26 M14 22 L26 22" stroke="#B07030" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/></svg>
+        <h3>Convivencias Mensuales</h3>
+        <p>El último fin de semana de cada mes, todo el equipo comparte una casa rural con técnicas de relajación, comida en común y reflexión colectiva para empezar el mes con energía renovada.</p>
+      </div>
+      <div class="filo-card aparece d1">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><circle cx="14" cy="14" r="6" stroke="#5C1A1A" stroke-width="1.5"/><circle cx="28" cy="20" r="5" stroke="#5C1A1A" stroke-width="1.5"/><path d="M20 14 L28 15" stroke="#B07030" stroke-width="1.2" stroke-linecap="round"/><path d="M8 30 C8 24 20 22 20 22 C20 22 32 24 32 30" stroke="#5C1A1A" stroke-width="1.5" fill="none"/></svg>
+        <h3>Liderazgo Democrático</h3>
+        <p>Reuniones semanales abiertas, escucha activa sin interrupciones y ninguna decisión importante sin contemplar todas las voces. El éxito empresarial es un objetivo compartido.</p>
+      </div>
+      <div class="filo-card aparece d2">
+        <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><path d="M20 34 L20 10" stroke="#2C4A2E" stroke-width="1.5" stroke-linecap="round"/><path d="M20 10 C20 10 10 14 8 6 C14 3 24 8 20 10Z" fill="#2C4A2E" opacity="0.5"/><path d="M20 20 C20 20 30 16 32 8 C26 5 16 10 20 20Z" fill="#3D6142" opacity="0.45"/><ellipse cx="20" cy="36" rx="6" ry="2" fill="#2C4A2E" opacity="0.3"/></svg>
+        <h3>Arraigo Local</h3>
+        <p>Buscamos trabajadores del propio pueblo donde se fabrica el vino, para generar arraigo, ayudar a repoblar el territorio y construir un equipo que ama genuinamente lo que produce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="background:var(--crema-claro); text-align:center">
+  <div class="section-inner">
+    <div class="contacto-inner">
+      <p class="section-label aparece">Encuéntranos</p>
+      <h2 class="section-title aparece d1">¿Tienes <em>Sed</em>?</h2>
+      <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
+      <img src="https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/Gemini_Generated_Image_tfopkstfopkstfop%20(1).webp" alt="Botijo artesano" class="aparece d2" style="height: 18rem; width: auto; display: block; margin: 1.5rem auto 2.5rem; object-fit: contain;">
+      <p class="body-p aparece d2" style="max-width:100%; text-align:center; margin:0 auto">Visítanos en nuestra bodega histórica en la dehesa extremeña o acércate a tu punto de recarga más cercano para llenar tu botijo y escuchar lo que el barro tiene para contarte.</p>
+      <div class="contact-datos aparece d3">
+        <div class="dato"><h5>Ubicación</h5><p>Dehesa Extremeña, Extremadura</p></div>
+        <div class="dato"><h5>Producto</h5><p>Vino Tinto Artesano en Botijo</p></div>
+        <div class="dato"><h5>Filosofía</h5><p>Barro · Vid · Pasión</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">La Sed <span>del Pueblo</span></div>
+  <div class="footer-slogan">Barro · Vid · Pasión</div>
+  <div class="footer-copy">© 2025 La Sed del Pueblo · Extremadura, España</div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.aparece').forEach(el => obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
