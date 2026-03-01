@@ -206,7 +206,7 @@ h2.section-title em { font-style: italic; color: var(--verde-dehesa); }
 /* ─── HISTORIA ─── */
 #historia { background: var(--crema-claro); }
 #historia .grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: stretch;
 }
 .timeline { border-left: 2px solid var(--ocre); padding-left: 2rem; margin-top: 1rem; }
 .tl-item { position: relative; margin-bottom: 2rem; }
@@ -378,7 +378,8 @@ h2.section-title em { font-style: italic; color: var(--verde-dehesa); }
 
 /* ─── FILOSOFÍA ─── */
 #filosofia { background: var(--pergamino-osc); }
-.filo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 3.5rem; }
+#filosofia .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.filo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
 .filo-card {
   background: var(--crema-claro); padding: 2.5rem 2rem;
   border-top: 3px solid var(--vino);
@@ -418,7 +419,7 @@ footer {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   nav ul { display: none; } nav { padding: 1rem 2rem; }
-  #historia .grid, #producto .grid, #sostenibilidad .grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  #historia .grid, #producto .grid, #sostenibilidad .grid, #filosofia .grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .valores-grid { grid-template-columns: repeat(2,1fr); }
   .filo-grid { grid-template-columns: 1fr; }
   section { padding: 4rem 2rem; }
@@ -435,7 +436,7 @@ footer {
 
 <!-- CABECERA -->
 <header>
-  <div class="nav-top">Extremadura · Vino Tinto Artesano · Bodega Histórica desde 1936</div>
+  <div class="nav-top">Extremadura · Vino Tinto Artesano · Bodega Histórica desde 1920</div>
   <nav>
     <div class="nav-logo">La Sed <span>del</span> Pueblo</div>
     <ul>
@@ -480,7 +481,7 @@ footer {
         <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
         <p class="body-p aparece d2">Somos hijas de esta tierra extremeña. Cuando nos fuimos a la ciudad, nos llevamos la nostalgia de las tradiciones, el olor de la dehesa y el sabor del vino de pueblo. Con La Sed del Pueblo recuperamos no solo un vino, sino una forma de vivir.</p>
         <br>
-        <p class="body-p aparece d3" style="font-style:italic; color:var(--vino-claro)">Nuestra bodega es una construcción histórica de 1936, parcialmente destruida durante la Guerra Civil española y restaurada con respeto por sus materiales y estructura originales.</p>
+        <p class="body-p aparece d3" style="font-style:italic; color:var(--vino-claro)">Nuestra bodega es una construcción histórica de 1920, parcialmente destruida durante la Guerra Civil española y restaurada con respeto por sus materiales y estructura originales.</p>
         <div class="timeline aparece d2" style="margin-top:2.5rem">
           <div class="tl-item"><p class="tl-year">+8.000 a.C. — Cáucaso</p><p class="tl-text">Primeras evidencias de vinificación en vasijas de barro de la región caucásica.</p></div>
           <div class="tl-item"><p class="tl-year">Antigüedad — Egipto & Grecia</p><p class="tl-text">El vino se convierte en símbolo de cultura y estatus. Roma lo extiende por toda Europa.</p></div>
@@ -489,13 +490,19 @@ footer {
           <div class="tl-item"><p class="tl-year">Hoy — La Sed del Pueblo</p><p class="tl-text">El vino de pueblo ha vuelto. Barro, tierra, comunidad y pasión sin artificio.</p></div>
         </div>
       </div>
-      <div class="aparece d3">
+      <div class="aparece d3" style="display: flex; flex-direction: column;">
         <div class="historia-foto">
           <span style="font-size:7rem;line-height:1;display:block;margin:0 auto 1.5rem">🏺</span>
           <p>"Desde que nos vinimos a la ciudad dejando atrás nuestro pueblo, hemos echado en falta la cercanía y las tradiciones típicas, como hijas de esta tierra y herederas de ella."</p>
           <br>
           <p style="font-size:0.75rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ocre);font-family:'Raleway',sans-serif;font-style:normal">— Las Fundadoras</p>
         </div>
+        
+        <!-- Marco Foto Antigua / Papel Quemado -->
+        <div style="margin-top: 16rem; padding: 14px 14px 22px 14px; background-color: #d6c5a8; background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png'), radial-gradient(ellipse at center, transparent 40%, rgba(80, 30, 10, 0.6) 85%, rgba(30, 10, 0, 0.95) 100%); box-shadow: 4px 5px 12px rgba(0,0,0,0.3), inset 0 0 25px rgba(40,15,5,0.85); border-radius: 2px 4px 3px 5px; transform: rotate(-1.5deg);">
+          <img src="https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/Captura-de-pantalla-2026-03-01-193122_1.webp" alt="Tradición y dehesa" style="width: 100%; height: auto; display: block; filter: sepia(45%) contrast(1.15) brightness(0.95); mix-blend-mode: multiply; border: 1px solid rgba(0,0,0,0.15);">
+        </div>
+
       </div>
     </div>
   </div>
@@ -557,7 +564,7 @@ footer {
       <div class="vcard">
         <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><rect x="8" y="20" width="24" height="14" rx="1" stroke="#5C1A1A" stroke-width="1.5"/><path d="M4 22 L20 8 L36 22" stroke="#5C1A1A" stroke-width="1.5" stroke-linecap="round"/><rect x="16" y="26" width="8" height="8" rx="1" fill="#B07030" opacity="0.4"/></svg>
         <p class="vcard-name">Identidad Local</p>
-        <p class="vcard-desc">Bodega histórica de 1936 en plena dehesa extremeña, con materiales y estructura originales. El territorio es nuestra identidad más profunda.</p>
+        <p class="vcard-desc">Bodega histórica de 1920 en plena dehesa extremeña, con materiales y estructura originales. El territorio es nuestra identidad más profunda.</p>
       </div>
 
       <!-- Respeto -->
@@ -591,7 +598,7 @@ footer {
     <div class="grid">
       <div class="aparece">
         <div class="producto-marco" style="padding: 1.5rem; padding-bottom: 2rem;">
-          <img src="https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/Captura-de-pantalla-2026-02-27-103017.webp" alt="Botijo artesano de barro" style="width:100%; height:420px; object-fit:cover; margin:0 auto 2rem; display:block; filter: sepia(10%) contrast(1.05);">
+          <img src="https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/Captura-de-pantalla-2026-03-01-193138_1.webp" alt="Botijo artesano de barro" style="width:100%; height:420px; object-fit:cover; margin:0 auto 2rem; display:block; filter: sepia(10%) contrast(1.05);">
           <p class="prod-nombre" style="margin-bottom:0;">La Sed del Pueblo</p>
         </div>
       </div>
@@ -603,7 +610,7 @@ footer {
           <div class="feat-item aparece d1"><div class="feat-num">I</div><div><h4>Barro Artesano</h4><p>Cada botijo es único, elaborado a mano con barro de la tierra extremeña. No es un envase: es patrimonio cultural vivo y material de memoria colectiva.</p></div></div>
           <div class="feat-item aparece d2"><div class="feat-num">II</div><div><h4>Reutilizable y Circular</h4><p>El botijo puede recargarse en nuestra bodega o en cualquier franquicia. Compramos menos, reutilizamos más, respetamos la tierra.</p></div></div>
           <div class="feat-item aparece d3"><div class="feat-num">III</div><div><h4>Elaboración Tradicional</h4><p>Parras autóctonas, injertos tradicionales y sin producción intensiva. Aditivos mínimos para respetar la naturalidad del vino y la tierra.</p></div></div>
-          <div class="feat-item aparece d3"><div class="feat-num">IV</div><div><h4>Bodega Histórica de 1936</h4><p>Producimos en una bodega con historia, restaurada con mimo para preservar su estructura y los materiales de construcción originales.</p></div></div>
+          <div class="feat-item aparece d3"><div class="feat-num">IV</div><div><h4>Bodega Histórica de 1920</h4><p>Producimos en una bodega con historia, restaurada con mimo para preservar su estructura y los materiales de construcción originales.</p></div></div>
         </div>
       </div>
     </div>
@@ -709,10 +716,60 @@ footer {
 <!-- FILOSOFÍA -->
 <section id="filosofia" style="background:var(--pergamino-osc)">
   <div class="section-inner">
-    <p class="section-label aparece" style="text-align:center">Cómo Trabajamos</p>
-    <h2 class="section-title aparece d1" style="text-align:center">Nuestra <em>Filosofía</em></h2>
-    <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
-    <p class="body-p aparece d2" style="max-width:650px; margin:0 auto; text-align:center">En La Sed del Pueblo no separamos el trabajo de la vida. Quien produce algo que ama, lo hace mejor. Y quien se siente parte de algo real, permanece.</p>
+    <div class="grid" style="align-items: flex-start;">
+      <div>
+        <p class="section-label aparece">Cómo Trabajamos</p>
+        <h2 class="section-title aparece d1">Nuestra <em>Filosofía</em></h2>
+        <div class="linea-ornamental aparece d1"><span class="ornament">❦</span></div>
+        <p class="body-p aparece d2">En La Sed del Pueblo no separamos el trabajo de la vida. Quien produce algo que ama, lo hace mejor. Y quien se siente parte de algo real, permanece. Así son nuestras reuniones: horizontales, cercanas y con el territorio siempre presente.</p>
+      </div>
+      <div class="aparece d3">
+        <div style="margin-top: 4.5rem; padding: 22px; background: #3b2313; background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); border: 4px solid #1f1006; box-shadow: 10px 10px 0 rgba(42,20,8,0.3), inset 0 0 25px rgba(0,0,0,0.95); border-radius: 4px; position: relative;">
+            <!-- Cuerda y clavo colgador -->
+            <svg style="position: absolute; top: -85px; left: 50%; transform: translateX(-50%); width: 170px; height: 85px; overflow: visible; z-index: -1;" viewBox="0 0 160 80">
+                <path d="M 0,80 L 80,10 L 160,80" fill="none" stroke="#a3784f" stroke-width="4.5" stroke-dasharray="6,2" stroke-linecap="round"/>
+                <circle cx="81" cy="9" r="6" fill="rgba(0,0,0,0.6)" />
+                <circle cx="80" cy="8" r="6" fill="#1E1205" />
+                <circle cx="79" cy="7" r="3" fill="#4a2f1d" />
+            </svg>
+            
+            <!-- Talla Madera - Superior Izquierda -->
+            <svg style="position: absolute; top: 6px; left: 6px; width: 28px; height: 28px; opacity: 0.8; filter: drop-shadow(1px 1px 0px rgba(255,255,255,0.15));" viewBox="0 0 50 50">
+                <g fill="#140802" stroke="#140802" stroke-width="1.5" stroke-linejoin="round">
+                    <path d="M4,4 Q20,10 32,24" fill="none" stroke-width="3"/>
+                    <path d="M22,6 C12,0 0,15 15,22 C20,16 22,16 22,6 Z" stroke="none"/>
+                    <path d="M8,26 C-2,36 15,50 20,35 C15,30 15,26 8,26 Z" stroke="none"/>
+                    <circle cx="28" cy="14" r="5" stroke="none"/><circle cx="38" cy="18" r="4.5" stroke="none"/><circle cx="26" cy="24" r="5" stroke="none"/>
+                    <circle cx="34" cy="26" r="4.5" stroke="none"/><circle cx="42" cy="28" r="4" stroke="none"/><circle cx="28" cy="32" r="4.5" stroke="none"/>
+                    <circle cx="36" cy="34" r="4" stroke="none"/><circle cx="30" cy="40" r="4" stroke="none"/><circle cx="35" cy="43" r="3.5" stroke="none"/>
+                </g>
+            </svg>
+            <!-- Talla Madera - Superior Derecha -->
+            <svg style="position: absolute; top: 6px; right: 6px; transform: scaleX(-1); width: 28px; height: 28px; opacity: 0.8; filter: drop-shadow(1px 1px 0px rgba(255,255,255,0.15));" viewBox="0 0 50 50">
+                <g fill="#140802" stroke="#140802" stroke-width="1.5" stroke-linejoin="round">
+                    <path d="M4,4 Q20,10 32,24" fill="none" stroke-width="3"/><path d="M22,6 C12,0 0,15 15,22 C20,16 22,16 22,6 Z" stroke="none"/><path d="M8,26 C-2,36 15,50 20,35 C15,30 15,26 8,26 Z" stroke="none"/>
+                    <circle cx="28" cy="14" r="5" stroke="none"/><circle cx="38" cy="18" r="4.5" stroke="none"/><circle cx="26" cy="24" r="5" stroke="none"/><circle cx="34" cy="26" r="4.5" stroke="none"/><circle cx="42" cy="28" r="4" stroke="none"/><circle cx="28" cy="32" r="4.5" stroke="none"/><circle cx="36" cy="34" r="4" stroke="none"/><circle cx="30" cy="40" r="4" stroke="none"/><circle cx="35" cy="43" r="3.5" stroke="none"/>
+                </g>
+            </svg>
+            <!-- Talla Madera - Inferior Izquierda -->
+            <svg style="position: absolute; bottom: 6px; left: 6px; transform: scaleY(-1); width: 28px; height: 28px; opacity: 0.8; filter: drop-shadow(1px 1px 0px rgba(255,255,255,0.15));" viewBox="0 0 50 50">
+                <g fill="#140802" stroke="#140802" stroke-width="1.5" stroke-linejoin="round">
+                    <path d="M4,4 Q20,10 32,24" fill="none" stroke-width="3"/><path d="M22,6 C12,0 0,15 15,22 C20,16 22,16 22,6 Z" stroke="none"/><path d="M8,26 C-2,36 15,50 20,35 C15,30 15,26 8,26 Z" stroke="none"/>
+                    <circle cx="28" cy="14" r="5" stroke="none"/><circle cx="38" cy="18" r="4.5" stroke="none"/><circle cx="26" cy="24" r="5" stroke="none"/><circle cx="34" cy="26" r="4.5" stroke="none"/><circle cx="42" cy="28" r="4" stroke="none"/><circle cx="28" cy="32" r="4.5" stroke="none"/><circle cx="36" cy="34" r="4" stroke="none"/><circle cx="30" cy="40" r="4" stroke="none"/><circle cx="35" cy="43" r="3.5" stroke="none"/>
+                </g>
+            </svg>
+            <!-- Talla Madera - Inferior Derecha -->
+            <svg style="position: absolute; bottom: 6px; right: 6px; transform: scale(-1, -1); width: 28px; height: 28px; opacity: 0.8; filter: drop-shadow(1px 1px 0px rgba(255,255,255,0.15));" viewBox="0 0 50 50">
+                <g fill="#140802" stroke="#140802" stroke-width="1.5" stroke-linejoin="round">
+                    <path d="M4,4 Q20,10 32,24" fill="none" stroke-width="3"/><path d="M22,6 C12,0 0,15 15,22 C20,16 22,16 22,6 Z" stroke="none"/><path d="M8,26 C-2,36 15,50 20,35 C15,30 15,26 8,26 Z" stroke="none"/>
+                    <circle cx="28" cy="14" r="5" stroke="none"/><circle cx="38" cy="18" r="4.5" stroke="none"/><circle cx="26" cy="24" r="5" stroke="none"/><circle cx="34" cy="26" r="4.5" stroke="none"/><circle cx="42" cy="28" r="4" stroke="none"/><circle cx="28" cy="32" r="4.5" stroke="none"/><circle cx="36" cy="34" r="4" stroke="none"/><circle cx="30" cy="40" r="4" stroke="none"/><circle cx="35" cy="43" r="3.5" stroke="none"/>
+                </g>
+            </svg>
+
+            <img src="https://nbjxsggeuthepfmfwouk.supabase.co/storage/v1/object/public/web%20vino/Captura-de-pantalla-2026-03-01-193041.webp" alt="Reunión del equipo de La Sed del Pueblo" style="width: 100%; height: auto; object-fit: cover; display: block; filter: sepia(12%) contrast(1.05); border: 2px solid #140802; position: relative; z-index: 2; box-shadow: 0 0 10px rgba(0,0,0,0.6);">
+        </div>
+      </div>
+    </div>
     <div class="filo-grid">
       <div class="filo-card aparece">
         <svg class="svg-icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="14" width="28" height="20" rx="2" stroke="#5C1A1A" stroke-width="1.5"/><path d="M12 14 L12 10 C12 10 16 6 20 6 C24 6 28 10 28 10 L28 14" stroke="#5C1A1A" stroke-width="1.5" fill="none"/><path d="M14 26 L26 26 M14 22 L26 22" stroke="#B07030" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/></svg>
